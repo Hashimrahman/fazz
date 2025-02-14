@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+.custom-swal-popup {
+    height: 300px; /* Adjust height as needed */
+    font-size: x-large;
+    text-align: center;
+  }
+
+  .custom-swal-popup2{
+    height: 300px; /* Adjust height as needed */
+    font-size: x-large;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
