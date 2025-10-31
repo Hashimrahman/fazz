@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const Love = () => {
   const sentences = useMemo(
     () => [
-      "Hey Fazz ",
+      "Hey Zidh ",
       "Sugalle anak 👀",
       "Iyy vicharikndavum enth Thenga🥥 aan ippo ith nn ",
       "lleee 😌",
