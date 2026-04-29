@@ -215,3 +215,31 @@
   background: linear-gradient(90deg, #ff1493, #ff6b9d) !important;
   height: 4px !important;
 }
+
+.custom-swal-close {
+  position: absolute !important;
+  top: 12px !important;
+  right: 16px !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 9999px !important;
+  background: linear-gradient(135deg, #ff1493, #ff6b9d) !important;
+  color: #fff !important;
+  font-size: 1.5rem !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 14px rgba(255, 20, 147, 0.5) !important;
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+  z-index: 2 !important;
+}
+
+.custom-swal-close:hover,
+.custom-swal-close:focus {
+  transform: scale(1.1) rotate(90deg) !important;
+  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.7) !important;
+  color: #fff !important;
+  outline: none !important;
+}

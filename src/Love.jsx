@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const Love = () => {
   const sentences = useMemo(
     () => [
-      "Hey ________ ",
+      "Hey Perakka kutti ",
       "Sugalle anak 👀",
       "Iyy vicharikndavum what coconut🥥 is this ",
       "lleee 😌",
@@ -27,7 +27,7 @@ const Love = () => {
       "Angne aa aagrahm safaleekarikan orale thedi erangi 🚲",
       "kalam korach aayi ttoo",
       "Pakshe enthoo manass aareyum angt sammayknilla 🫠",
-      "Angne orikkal ",
+      "Angne ann avde ",
       "Majnu nte laila ne ppole 😁",
       "Moideen nte kanjana mala ne pole 😉",
       "Nee vannu 🫵🏼🥺",
@@ -115,8 +115,10 @@ const Love = () => {
       text: "Njn Sammaykoola",
       timer: 3000,
       showConfirmButton: false,
+      showCloseButton: true,
       customClass: {
         popup: "custom-swal-popup2",
+        closeButton: "custom-swal-close",
       },
       timerProgressBar: true,
     });
