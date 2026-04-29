@@ -123,39 +123,61 @@ const Love = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-white transition-all duration-500">
+    <div className="relative flex flex-col items-center justify-center h-screen text-white overflow-hidden">
       <video
         autoPlay
         loop
         muted
+        playsInline
         className="absolute top-0 left-0 w-full h-full object-cover"
       >
         <source src={bgVideo} type="video/mp4" />
       </video>
+
+      <div className="video-overlay" />
+
+      <div className="floating-hearts pointer-events-none absolute inset-0 z-[5]">
+        {Array.from({ length: 12 }, (_, i) => `heart-${i + 1}`).map((cls) => (
+          <span key={cls} className={`heart ${cls}`}>❤️</span>
+        ))}
+      </div>
+
       {!showOptions && (
-        <h1
-          className={`text-4xl font-bold mb-4 text-red-500 z-10 text-center mx-4 ${
-            sentenceIndex === 0 ? "cursive-text" : "roboto-text"
-          }`}
+        <div
+          key={sentenceIndex}
+          className="text-card relative z-10 mx-4 max-w-3xl w-full"
         >
-          {text}
-        </h1>
+          <h1
+            className={`mb-2 text-center ${
+              sentenceIndex === 0 ? "cursive-text" : "roboto-text"
+            }`}
+          >
+            {text}
+            <span className="cursor-blink" aria-hidden="true"></span>
+          </h1>
+        </div>
       )}
 
       {!showOptions ? (
         <button
           onClick={handleNextSentence}
-          className="text-2xl mt-4 text-red-400 transition fixed bottom-50 flex gap-2 justify-center items-center border-b-1 z-20"
+          className="next-button text-lg flex gap-3 justify-center items-center font-semibold uppercase z-20"
         >
           Next
-          <FaArrowRightLong />
+          <FaArrowRightLong className="arrow-icon" />
         </button>
       ) : (
-        <div className="flex gap-4 mt-4 z-10">
-          <button className="px-20 py-3 text-lg font-semibold text-white bg-pink-500 rounded-full shadow-lg hover:bg-pink-600 transition" onClick={handleYes}>
+        <div className="buttons-fade-in flex gap-6 mt-4 z-10 flex-wrap justify-center px-4">
+          <button
+            className="yes-button px-20 py-4 text-xl font-bold rounded-full"
+            onClick={handleYes}
+          >
             Yes ❤️
           </button>
-          <button className="px-14 py-3 text-lg font-semibold text-white bg-gray-500 rounded-full shadow-lg hover:bg-gray-600 transition" onClick={handleNo}>
+          <button
+            className="no-button px-14 py-4 text-lg font-semibold rounded-full"
+            onClick={handleNo}
+          >
             No 😭💔
           </button>
         </div>
