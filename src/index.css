@@ -167,7 +167,8 @@
 /* ============ SWEETALERT CUSTOMIZATION ============ */
 .custom-swal-popup,
 .custom-swal-popup2 {
-  height: 320px;
+  min-height: 280px;
+  padding: 2.5rem 1.5rem !important;
   font-size: x-large;
   border-radius: 28px !important;
   background: linear-gradient(135deg, #fff5f9, #ffe0ec) !important;
@@ -175,17 +176,12 @@
     0 25px 70px rgba(255, 20, 147, 0.45),
     0 0 0 2px rgba(255, 105, 180, 0.45) inset !important;
   border: none !important;
-  animation: popupRise 0.5s cubic-bezier(0.22, 1, 0.36, 1) !important;
-}
-
-.custom-swal-popup {
   text-align: center;
 }
 
-.custom-swal-popup2 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.custom-swal-popup.swal2-show,
+.custom-swal-popup2.swal2-show {
+  animation: popupRise 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @keyframes popupRise {
@@ -216,33 +212,6 @@
   height: 4px !important;
 }
 
-.custom-swal-close {
-  position: absolute !important;
-  top: 12px !important;
-  right: 16px !important;
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 9999px !important;
-  background: linear-gradient(135deg, #ff1493, #ff6b9d) !important;
-  color: #fff !important;
-  font-size: 1.5rem !important;
-  line-height: 1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  box-shadow: 0 4px 14px rgba(255, 20, 147, 0.5) !important;
-  border: 2px solid rgba(255, 255, 255, 0.6) !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
-  z-index: 9999 !important;
-  cursor: pointer !important;
-  pointer-events: auto !important;
-  opacity: 1 !important;
-}
-
-.custom-swal-close:hover,
-.custom-swal-close:focus {
-  transform: scale(1.1) rotate(90deg) !important;
-  box-shadow: 0 6px 20px rgba(255, 20, 147, 0.7) !important;
-  color: #fff !important;
-  outline: none !important;
+.swal2-container {
+  z-index: 99999 !important;
 }

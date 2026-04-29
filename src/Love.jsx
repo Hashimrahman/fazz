@@ -110,19 +110,24 @@ const Love = () => {
   };
 
   const handleNo = () => {
-    Swal.fire({
-      title: "No no no no nooo!",
-      text: "Njn Sammaykoola",
-      timer: 3000,
-      showConfirmButton: false,
-      showCloseButton: true,
-      customClass: {
-        popup: "custom-swal-popup2",
-        closeButton: "custom-swal-close",
-      },
-      timerProgressBar: true,
-    });
-  };
+  Swal.fire({
+    title: "No no no no nooo!",
+    text: "Njn Sammaykoola",
+    timer: 3000,
+    showConfirmButton: false,
+    showCloseButton: true,
+    timerProgressBar: true,
+    customClass: {
+      popup: "custom-swal-popup2",
+      closeButton: "custom-swal-close",
+    },
+    willClose: () => {
+      console.log("Closed via timer or close button");
+
+      // 👉 your logic here
+    },
+  });
+};
 
   return (
     <div className="relative flex flex-col items-center justify-center h-screen text-white overflow-hidden">
